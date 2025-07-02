@@ -23,9 +23,9 @@ void InitializeLogger()
     spdlog::set_pattern("[%^%L%$] %v");
 }
 
-void HandleMessage(SKSE::MessagingInterface::Message* a_message)
+void HandleMessage(SKSE::MessagingInterface::Message* aMessage)
 {
-    switch (a_message->type) {
+    switch (aMessage->type) {
     case SKSE::MessagingInterface::kDataLoaded:
         {
             Addresses::Hook();
@@ -34,13 +34,13 @@ void HandleMessage(SKSE::MessagingInterface::Message* a_message)
     }
 }
 
-SKSEPluginLoad(const SKSE::LoadInterface* a_skse)
+SKSEPluginLoad(const SKSE::LoadInterface* aLoadInterface)
 {
     InitializeLogger();
 
-    SKSE::Init(a_skse);
+    SKSE::Init(aLoadInterface);
 
-    SKSE::AllocTrampoline(14 * 1);
+    SKSE::AllocTrampoline(static_cast<size_t>(14) * 1);
 
     const auto messaging_interface = SKSE::GetMessagingInterface();
 
