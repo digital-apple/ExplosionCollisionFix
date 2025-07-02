@@ -22,7 +22,7 @@
         ["directxtk#31fecfc4"] = {
             repo = {
                 branch = "master",
-                commit = "85f95730ce94fa946b64fe1f69db6346eb0a01fc",
+                commit = "b2d6e85d23e92d8b8aade0f5cf926075912e7e37",
                 url = "https://gitlab.com/tboox/xmake-repo.git"
             },
             version = "24.2.0"
