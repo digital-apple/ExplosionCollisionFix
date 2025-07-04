@@ -40,7 +40,7 @@ SKSEPluginLoad(const SKSE::LoadInterface* aLoadInterface)
 
     SKSE::Init(aLoadInterface);
 
-    SKSE::AllocTrampoline(static_cast<size_t>(14) * 1);
+    SKSE::AllocTrampoline(14 * 1);
 
     const auto messaging_interface = SKSE::GetMessagingInterface();
 
